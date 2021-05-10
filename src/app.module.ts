@@ -5,9 +5,16 @@ import { AuthModule } from './auth/auth.module';
 import { ArticleModule } from './article/article.module';
 import { CommentModule } from './comment/comment.module';
 import { TopPageModule } from './top-page/top-page.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-	imports: [AuthModule, ArticleModule, CommentModule, TopPageModule],
+	imports: [
+		ConfigModule.forRoot(),
+		AuthModule,
+		ArticleModule,
+		CommentModule,
+		TopPageModule
+	],
 	controllers: [AppController],
 	providers: [AppService],
 })
