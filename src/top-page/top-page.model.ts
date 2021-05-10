@@ -11,6 +11,7 @@ export enum TopPageMenu {
 }
 
 export class TopPageModel {
+	_id: string;
   firstLevelCategory: TopPageMenu;
   title: string;
   articles: {
