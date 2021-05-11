@@ -1,3 +1,6 @@
+import { Prop } from '@typegoose/typegoose';
+import { TimeStamps, Base } from '@typegoose/typegoose/lib/defaultClasses';
+
 export enum TopPageMenu {
 	news,
 	obshestvo,
@@ -10,14 +13,28 @@ export enum TopPageMenu {
 	paper
 }
 
-export class TopPageModel {
-	_id: string;
-  firstLevelCategory: TopPageMenu;
+export class Articles {
+  @Prop()
+  image: string;
+
+  @Prop()
   title: string;
-  articles: {
-	image: string;
-	title: string;
-	bodyAnons: string;
-	datePublication: Date;
-  }[];
+
+  @Prop()
+  bodyAnons: string;
+
+  @Prop()
+  datePublication: Date;
+}
+
+export interface TopPageModel extends Base {}
+export class TopPageModel extends TimeStamps {
+  @Prop({ enum: TopPageMenu })
+  firstLevelCategory: TopPageMenu;
+
+  @Prop()
+  title: string;
+
+  @Prop({ type: () => [Articles]})
+  articles: Articles[];
 }
