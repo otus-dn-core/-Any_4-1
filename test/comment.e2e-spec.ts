@@ -5,15 +5,15 @@ import { AppModule } from '../src/app.module';
 import { Types, disconnect } from 'mongoose';
 import { CreateCommentDto } from 'src/comment/dto/create-comment.dto';
 
-const commentId = new Types.ObjectId().toHexString();
+const articleId = new Types.ObjectId().toHexString();
 
 const date = new Date();
 
 const testDto: CreateCommentDto = {
-	name: 'Test',
-	createdAt: date,
-	bodyComment: 'Текст комментария',
-	commentId
+  name: 'Test',
+  createdAt: date,
+  bodyComment: 'Текст комментария',
+  articleId
 };
 
 describe('AppController (e2e)', () => {
@@ -41,15 +41,15 @@ describe('AppController (e2e)', () => {
 	});
   });
 
-//   it('/comment/byArticle/:articleId (GET)', async (done) => {
-// 	return request(app.getHttpServer())
-// 		.get('/comment/byArticle/' + createdId)
-// 		.expect(200)
-// 		.then(({ body }: request.Response) => {
-// 			expect(body.length).toBe(1);
-// 			done();
-// 		});
-//   });
+  it('/comment/byArticle/:articleId (GET)', async (done) => {
+	return request(app.getHttpServer())
+	.get('/comment/byArticle/' + articleId)
+	.expect(200)
+	.then(({ body }: request.Response) => {
+		expect(body.length).toBe(1);
+		done();
+	});
+  });
 
   it('/comment/:id (DELETE)', () => {
 	return request(app.getHttpServer())

@@ -14,5 +14,5 @@ export class CommentModel extends TimeStamps {
   bodyComment: string;
 
   @Prop()
-  commentId: Types.ObjectId;
+  articleId: Types.ObjectId;
 }
