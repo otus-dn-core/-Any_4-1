@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { CommentService } from './comment.service';
 import { COMMENT_NOT_FOUND } from './comment.constanst';
@@ -7,6 +7,7 @@ import { COMMENT_NOT_FOUND } from './comment.constanst';
 export class CommentController {
   constructor(private readonly commentService: CommentService) {}
 
+  @UsePipes(new ValidationPipe())
   @Post('create')
   async create(@Body() dto: CreateCommentDto) {
   	return this.commentService.create(dto);
