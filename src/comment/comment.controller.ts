@@ -15,6 +15,7 @@ import { CreateCommentDto } from './dto/create-comment.dto';
 import { CommentService } from './comment.service';
 import { COMMENT_NOT_FOUND } from './comment.constanst';
 import { JwtAuthGuard } from '../auth/guards/jwt.guard';
+import { UserEmail } from 'src/decorators/user-email.decorato';
 
 @Controller('comment')
 export class CommentController {
@@ -23,20 +24,24 @@ export class CommentController {
   @UsePipes(new ValidationPipe())
   @Post('create')
   async create(@Body() dto: CreateCommentDto) {
-	  return this.commentService.create(dto);
+	return this.commentService.create(dto);
   }
 
   @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async delete(@Param('id') id: string) {
-	  const deletedDoc = await this.commentService.delete(id);
-	  if (!deletedDoc) {
-	  	throw new HttpException(COMMENT_NOT_FOUND, HttpStatus.NOT_FOUND);
+	const deletedDoc = await this.commentService.delete(id);
+	if (!deletedDoc) {
+		throw new HttpException(COMMENT_NOT_FOUND, HttpStatus.NOT_FOUND);
 	}
   }
 
+  @UseGuards(JwtAuthGuard)
   @Get('byArticle/:articleId')
-  async getByArticle(@Param('articleId') articleId: string) {
+  // async getByArticle(@Param('articleId') articleId: string, @UserEmail() email: string) {
+  async getByArticle(
+	@Param('articleId') articleId: string) {
+	// console.log(email);
 	return this.commentService.findByArticleId(articleId);
   }
 }
