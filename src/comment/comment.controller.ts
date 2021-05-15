@@ -1,7 +1,20 @@
-import { Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post, UsePipes, ValidationPipe } from '@nestjs/common';
+import { 
+  Body,
+  Controller,
+  Delete,
+  Get,
+  HttpException,
+  HttpStatus,
+  Param,
+  Post,
+  UseGuards,
+  UsePipes,
+  ValidationPipe 
+} from '@nestjs/common';
 import { CreateCommentDto } from './dto/create-comment.dto';
 import { CommentService } from './comment.service';
 import { COMMENT_NOT_FOUND } from './comment.constanst';
+import { JwtAuthGuard } from '../auth/guards/jwt.guard';
 
 @Controller('comment')
 export class CommentController {
@@ -10,19 +23,20 @@ export class CommentController {
   @UsePipes(new ValidationPipe())
   @Post('create')
   async create(@Body() dto: CreateCommentDto) {
-  	return this.commentService.create(dto);
+	  return this.commentService.create(dto);
   }
 
+  @UseGuards(JwtAuthGuard)
   @Delete(':id')
   async delete(@Param('id') id: string) {
 	  const deletedDoc = await this.commentService.delete(id);
-	  if(!deletedDoc) {
-		  throw new HttpException(COMMENT_NOT_FOUND, HttpStatus.NOT_FOUND);
-	  }
+	  if (!deletedDoc) {
+	  	throw new HttpException(COMMENT_NOT_FOUND, HttpStatus.NOT_FOUND);
+	}
   }
 
   @Get('byArticle/:articleId')
   async getByArticle(@Param('articleId') articleId: string) {
-	  return this.commentService.findByArticleId(articleId);
+	return this.commentService.findByArticleId(articleId);
   }
 }
