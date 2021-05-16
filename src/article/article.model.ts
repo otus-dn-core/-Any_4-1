@@ -6,6 +6,9 @@ export class ArticleModel extends TimeStamps {
   @Prop({ unique: true })
   urlSynonym: string;
 
+  @Prop({ unique: true })
+  id: string;
+
   @Prop()
   image: string[];
 
@@ -28,7 +31,7 @@ export class ArticleModel extends TimeStamps {
   dateUpdate: Date;
 
   @Prop()
-  publication: true;
+  publication: boolean;
 
   @Prop()
   author: string;
@@ -40,7 +43,7 @@ export class ArticleModel extends TimeStamps {
   commentNumber: number;
 
   @Prop()
-  blockInfo: true;
+  blockInfo: boolean;
 
   @Prop()
   position: string;

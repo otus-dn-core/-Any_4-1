@@ -1,0 +1,1 @@
+export const ARTICLE_NOT_FOUND_ERROR = 'Статья с таким id не найдена';
