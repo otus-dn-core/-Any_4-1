@@ -36,9 +36,6 @@ export class CreateArticleDto {
   @IsString({ each: true })
   metaTags: string[];
 
-  @IsNumber()
-  commentNumber: number;
-
   @IsBoolean()
   blockInfo: boolean;
 

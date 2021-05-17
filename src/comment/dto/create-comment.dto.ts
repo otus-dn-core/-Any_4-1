@@ -3,8 +3,8 @@ export class CreateCommentDto {
   @IsString()
   name: string;
 
-  @IsDate()
-  createdAt: Date;
+  // @IsDate()
+  // createdAt: Date;
 
   @IsString()
   bodyComment: string;

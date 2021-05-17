@@ -40,9 +40,6 @@ export class ArticleModel extends TimeStamps {
   metaTags: string[];
 
   @Prop()
-  commentNumber: number;
-
-  @Prop()
   blockInfo: boolean;
 
   @Prop()

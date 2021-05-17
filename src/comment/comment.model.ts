@@ -7,8 +7,8 @@ export class CommentModel extends TimeStamps {
   @Prop()
   name: string;
 
-  @Prop()
-  createdAt: Date;
+  // @Prop()
+  // createdAt: Date;
 
   @Prop()
   bodyComment: string;

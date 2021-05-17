@@ -46,12 +46,12 @@ export class ArticleService {
 				from: 'Comment',
 				localField: '_id',
 				foreignField: 'articleId',
-				as: 'comment',
+				as: 'comments',
 			}
 		},
 		{
 			$addFields: {
-				commentCount: { $size: '$comment' }
+				commentCount: { $size: '$comments' }
 			}
 		}
 	]).exec() as (ArticleModel & { comment: CommentModel[], commentCount: number })[];
