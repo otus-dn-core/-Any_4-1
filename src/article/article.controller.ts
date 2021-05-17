@@ -4,6 +4,7 @@ import { CreateArticleDto } from './dto/create-article.dto';
 import { FindArticleDto } from './dto/find-article.dto';
 import { ArticleService } from './article.service';
 import { ARTICLE_NOT_FOUND_ERROR } from './article.constants';
+import { IdValidationPipe } from 'src/pipes/ad-validation.pipe';
 
 @Controller('articles')
 export class ArticleController {
@@ -15,7 +16,7 @@ export class ArticleController {
   }
 
   @Get(':id')
-  async get(@Param('id') id: string) {
+  async get(@Param('id', IdValidationPipe) id: string) {
 	const article = await this.articleService.findById(id);
 	if (!article) {
 		throw new NotFoundException(ARTICLE_NOT_FOUND_ERROR);
@@ -24,7 +25,7 @@ export class ArticleController {
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string) {
+  async delete(@Param('id', IdValidationPipe) id: string) {
 	const deleteArticle = await this.articleService.deleteById(id);
 	if (!deleteArticle) {
 		throw new NotFoundException(ARTICLE_NOT_FOUND_ERROR);
@@ -32,7 +33,10 @@ export class ArticleController {
   }
 
   @Patch(':id')
-  async patch(@Param('id') id: string, @Body() dto: ArticleModel) {
+  async patch(
+	@Param('id', IdValidationPipe) id: string,
+	@Body() dto: ArticleModel,
+  ) {
 	const updatedArticle = await this.articleService.updateById(id, dto);
 	if (!updatedArticle) {
 		throw new NotFoundException(ARTICLE_NOT_FOUND_ERROR);
