@@ -27,33 +27,48 @@ export class ArticleService {
 	}
 
 	async findWithComments(dto: FindArticleDto) {
-		return this.articleModel.aggregate([
+		return this.articleModel
+		.aggregate([
 		{
 			$match: {
-				rubric: dto.rubric,
-			}
+			rubric: dto.rubric,
+			},
 		},
 		{
 			$sort: {
-				_id: 1,
-			}
+			_id: 1,
+			},
 		},
 		{
 			$limit: dto.limit,
 		},
 		{
 			$lookup: {
-				from: 'Comment',
-				localField: '_id',
-				foreignField: 'articleId',
-				as: 'comments',
-			}
+			from: 'Comment',
+			localField: '_id',
+			foreignField: 'articleId',
+			as: 'comments',
+			},
 		},
 		{
 			$addFields: {
-				commentCount: { $size: '$comments' }
-			}
-		}
-	]).exec() as (ArticleModel & { comment: CommentModel[], commentCount: number })[];
+			commentCount: { $size: '$comments' },
+			comments: {
+				$function: {
+				body: `function (comments) {
+							comments.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+							return comments;
+						}`,
+				args: ['$comments'],
+				lang: 'js',
+				},
+			},
+			},
+		},
+		])
+		.exec() as (ArticleModel & {
+		comment: CommentModel[];
+		commentCount: number;
+	})[];
 	}
 }
