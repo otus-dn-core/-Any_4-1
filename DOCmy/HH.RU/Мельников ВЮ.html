@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1251">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.10  (Win32)">
+	<META NAME="CREATED" CONTENT="20090416;11320264">
+	<META NAME="CHANGEDBY" CONTENT="mv mv">
+	<META NAME="CHANGED" CONTENT="20210609;13140592">
+	<META NAME="Info 1" CONTENT="">
+	<META NAME="Info 2" CONTENT="">
+	<META NAME="Info 3" CONTENT="">
+	<META NAME="Info 4" CONTENT="">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		P { margin-bottom: 0.21cm; so-language: zxx }
+		H1 { margin-bottom: 0.21cm; page-break-after: avoid }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt; so-language: zxx; font-weight: bold }
+		H1.cjk { font-family: "Andale Sans UI"; font-size: 16pt; so-language: zxx; font-weight: bold }
+		H1.ctl { font-family: "Tahoma"; font-size: 16pt; so-language: zxx; font-weight: bold }
+		H3 { margin-bottom: 0.21cm; page-break-after: avoid }
+		H3.western { font-family: "Arial", sans-serif; font-size: 14pt; so-language: zxx; font-weight: bold }
+		H3.cjk { font-family: "Andale Sans UI"; font-size: 14pt; so-language: zxx; font-weight: bold }
+		H3.ctl { font-family: "Tahoma"; font-size: 14pt; so-language: zxx; font-weight: bold }
+		H2 { margin-bottom: 0.21cm; page-break-after: avoid }
+		H2.western { font-family: "Arial", sans-serif; font-size: 14pt; so-language: zxx; font-style: italic; font-weight: bold }
+		H2.cjk { font-family: "Andale Sans UI"; font-size: 14pt; so-language: zxx; font-style: italic; font-weight: bold }
+		H2.ctl { font-family: "Tahoma"; font-size: 14pt; so-language: zxx; font-style: italic; font-weight: bold }
+		A:link { color: #000080; so-language: zxx; text-decoration: underline }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="de-DE" LINK="#000080" VLINK="#800000" DIR="LTR">
+<P LANG="zxx" STYLE="margin-bottom: 0cm"><BR>
+</P>
+<H3 LANG="zxx" CLASS="western" STYLE="margin-top: 0.1cm; margin-bottom: 0.11cm">
+<FONT COLOR="#666666">Тема: </FONT>
+</H3>
+<H1 LANG="zxx" CLASS="western" STYLE="margin-top: 0cm; margin-bottom: 0.01cm">
+<FONT COLOR="#000066">Новостной сайт. Перенос с Drupal 7 на Nest.js +
+Next.js. Весь серверный функционал в Docker.</FONT></H1>
+<P LANG="zxx" STYLE="margin-bottom: 0.01cm"><BR><BR>
+</P>
+<H3 LANG="zxx" CLASS="western"><SPAN LANG="ru-RU">Автор</SPAN><SPAN LANG="en-US">:
+</SPAN><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Roboto"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Мельников
+Вячеслав Юрьевич</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></H3>
+<H2 LANG="zxx" CLASS="western"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">Цели,
+п</SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">роцесс,
+перечень технологий</SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">:</SPAN></SPAN></SPAN></FONT></SPAN></FONT></H2>
+<P LANG="zxx"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Новостной
+сайт </SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">rostof.ru
+</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(&quot;Ростов
+Официальный&quot;) реализован на платформе Drupal версии №7,
+серверная платформа Centos 7. </SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT>
+</P>
+<P LANG="ru-RU" STYLE="font-style: normal; text-decoration: none"><FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><B><SPAN STYLE="text-decoration: none">Предпосылки:</SPAN></B></FONT></FONT></FONT></P>
+<P LANG="zxx"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">1.</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+	Изменились требования со стороны поисковых систем, возникли новые
+бизнес-идеи, требуется оптимизация ресурсов. В 2021 году
+заканчивается поддержка 7 версии Drupal.</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
+<P LANG="en-US" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">Всё
+это натолкнуло меня на идею не просто перейти на новую версию Drupal,
+но и полностью уйти от &quot;монолита&quot;, который не только
+затрудняет развитие отдельно взятого функционала,</SPAN></FONT></FONT></FONT></P>
+<P LANG="en-US" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">но
+и часто просто блокирует возможность реализации новой идеи всилу
+плотной связанности отдельных блоков системы в рамках ядра Drupal. </SPAN></FONT></FONT></FONT>
+</P>
+<P LANG="en-US" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">Отмечу
+также, что попытки обойти ядро в целях упрощения разработки (что
+часто делают новички или не добросовестные разработчики), </SPAN></FONT></FONT></FONT>
+</P>
+<P LANG="zxx"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">всегда
+приводят к серъёзным последствиям в развитии любого Drupal - проекта
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(потеря
+безопасности, блокировка обновления с потерей функционала). </SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT>
+</P>
+<P LANG="ru-RU"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">При
+этом стоит отметить, что переход на </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Drupal8
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">является
+серъёзной задачей, в отличии от дальнейшего обновления на версию 9,
+где реализован упрощённый </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">update</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">.
+Заканчивая тему </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Drupal,
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">хочется
+обратить внимание на реализацию &laquo;из коробки&raquo; в версиях,
+начиная с </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">8
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">такой
+технологии: &laquo;headless (иногда ещё его называют decoupled)
+Drupal&raquo;. В таком подходе </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Drupal
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">используют
+как серверную часть с админкой для реализации </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">REST.
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Причём
+сохраняется возможность использования </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Views.
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Данные
+через </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">JSON
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">получает
+фронтенд, реализованный на </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">React,
+Angular </SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">или
+ещё как угодно...</SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
+<P LANG="ru-RU"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Именно
+этот подход реализован мною через модуль на 7 версии </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Drupal.</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
+<P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">В
+результате стала доступна выборка данных не только по оддельным нодам
+(статьям), но и возможность агрегирования любых данных на стороне
+старой системы для передачи в новую систему.</SPAN></FONT></FONT></FONT></P>
+<P LANG="zxx"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">2.</SPAN></B></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+	Для сохранения показателей </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">SEO,
+</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">возникла
+необходимость в серверном рендеренге </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(SSR)</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">.
+Рассматривался вариант </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Gatsby
+(SSG), </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">но
+остановился на </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Nest.js,
+</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">как
+более гибком и </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">универсальном</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+решении.</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+<P LANG="ru-RU"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">3.</SPAN></B></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+	С целью использования одного языка для всей системы </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(JavaScript
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(TypeScript)),
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">выбран
+стэк: </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Nest.js
++ Next.js + Ionic (</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">или
+</SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">React
+Native </SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">для
+мобильных приложений</SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">).</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
+<P LANG="ru-RU"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">4.	</SPAN></B></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">На
+сервере использование </SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Docker
+</SPAN></SPAN></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">даёт
+возможность гибкой перестройки,</SPAN></SPAN></SPAN></FONT></SPAN></FONT></FONT></P>
+<P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"> <FONT FACE="Times New Roman, serif"><FONT SIZE=4>быстрого
+переноса и замены функционала. Кроме этого, индивидуалтные
+особенности условий предоставления серверных ресурсов, склоняют к
+преимуществам такой мобильности.</SPAN></FONT></FONT></FONT></P>
+<H2 LANG="en-US" CLASS="western" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+</H2>
+<H2 LANG="ru-RU" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">Ч</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">то
+получилось</SPAN></B></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">:</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT></FONT></H2>
+<OL>
+	<LI><P LANG="zxx"><B><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">Разработан
+	базовый функционал серверной части на </SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="text-decoration: none">Nest.js
+	/ MongoDB</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></B></P>
+</OL>
+<UL>
+	<LI><P LANG="zxx"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">JWT
+	&ndash; </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">авторизация
+	с проверкой имеющейся в базе электронной почты при регистрации</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+</UL>
+<P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<IMG SRC="%D0%9C%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%92%D0%AE_html_m453c8640.jpg" NAME="Графический объект2" ALIGN=LEFT WIDTH=642 HEIGHT=163 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<UL>
+	<LI><P LANG="zxx"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Создание,
+	удаление и правка статьи по </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">ID</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">.</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+</UL>
+<P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<IMG SRC="%D0%9C%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%92%D0%AE_html_m34d557c3.jpg" NAME="Графический объект3" ALIGN=LEFT WIDTH=642 HEIGHT=159 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<UL>
+	<LI><P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">Создание,
+	удаление комментария к статье.</SPAN></FONT></FONT></FONT></P>
+	<LI><P LANG="zxx"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Агрегация
+	в </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">MongoDB
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">на
+	примере объединения статьи и сомментариев к статье.</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+</UL>
+<P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<IMG SRC="%D0%9C%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%92%D0%AE_html_345cdff4.jpg" NAME="Графический объект4" ALIGN=LEFT WIDTH=538 HEIGHT=528 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+<OL START=2>
+	<LI><P LANG="zxx"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">На
+	живом сервере развёрнуты контейнеры с </SPAN></B></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">Nginx+Certbot(Let's
+	Encrypt &ndash; </SPAN></B></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">сертификаты</SPAN></B></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">),
+	MongoDB, Nest.js, React.</SPAN></B></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+</OL>
+<H2 LANG="en-US" CLASS="western" STYLE="font-style: normal; text-decoration: none">
+</H2>
+<H2 LANG="ru-RU" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">С</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">опроводительная
+информация</SPAN></B></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">:</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT></FONT></H2>
+<P LANG="zxx"><A HREF="https://github.com/otus-dn-core/-Any_4-1" TARGET="_blank"><FONT COLOR="#0000cc"><SPAN STYLE="text-decoration: none"><FONT FACE="Slack-Lato, appleLogo, sans-serif"><FONT SIZE=5><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">https://github.com/otus-dn-core/-Any_4-1</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></A><FONT COLOR="#0000cc"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=5><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">
+</SPAN></B></SPAN></SPAN></FONT></FONT></SPAN></FONT>
+</P>
+<P LANG="ru-RU"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Ссылка
+на репозиторий  </SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">c
+</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">вложенными
+папками:</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+<UL>
+	<LI><P LANG="ru-RU"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">контейнер
+	</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">MongoDB</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+	<LI><P LANG="ru-RU"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">контейнер
+	</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Nginx+Certbot</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+	<LI><P LANG="ru-RU"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">файлы
+	</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Docker
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">и
+	</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Docker-compose
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(в
+	корне)</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">для
+	запуска проекта</SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+	Nest.js </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT>
+	</P>
+	<LI><P LANG="ru-RU"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">экспорт
+	записей запросов из </SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Insomnia</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+</UL>
+<H2 LANG="ru-RU" CLASS="western"><FONT FACE="Times New Roman, serif"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">В
+работе</SPAN></B></SPAN></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><B><SPAN STYLE="text-decoration: none">:</SPAN></B></SPAN></SPAN></FONT></SPAN></FONT></FONT></H2>
+<OL>
+	<LI><P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+	<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">Большая
+	работа по организации централизованного обмена и
+	систематизированного по темам архивирования изображениями, которые
+	использованы и используются в процессе редакторской деятельности при
+	работе со статьями. При этом в базе должны сохраняться не только
+	исходные (полноразмерные) изображения с метаданными, но и данные по
+	их обрезке, размерам и соотношению сторон.</SPAN></FONT></FONT></FONT></P>
+	<LI><P LANG="zxx"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Кроме
+	реализации серверной части на </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Nest.js,
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">фронтенд
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">(PWA)</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">
+	с </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">SSR
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">на
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Next.js,
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">админка
+	на </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Angular
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">и
+	в перспективе мобильные приложения на </SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">Ionic
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="ru-RU"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">или
+	</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en-US"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><SPAN STYLE="text-decoration: none">React
+	Native.</SPAN></SPAN></SPAN></SPAN></FONT></FONT></SPAN></FONT></P>
+</OL>
+<P LANG="en-US" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<BR><BR>
+</P>
+<P LANG="ru-RU" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<FONT COLOR="#000000"><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="text-decoration: none">Идёт
+доработка.</SPAN></FONT></FONT></FONT></P>
+<P LANG="en-US" STYLE="font-style: normal; font-weight: normal; text-decoration: none">
+<BR><BR>
+</P>
+</BODY>
+</HTML>
